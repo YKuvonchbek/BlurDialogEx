@@ -26,7 +26,7 @@ class MyDialog(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.blurredView.alpha = 0f
+//        binding.blurredView.alpha = 0f
         binding.blurredView.visibility = View.INVISIBLE
         setContentView(binding.root)
         startBlur()
@@ -51,12 +51,12 @@ class MyDialog(
         Utilities.stackBlurBitmap(bitmap, Math.max(7f, Math.max(w, h) / 180).toInt())
         binding.blurredView.background = BitmapDrawable(context.resources, bitmap)
         binding.blurredView.visibility = View.VISIBLE
-        binding.blurredView.animate().alpha(1.0f).setDuration(180)
-            .setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator) {
-                    blurredAnimationInProgress = false
-                }
-            }).start()
+//        binding.blurredView.animate().alpha(1.0f).setDuration(180)
+//            .setListener(object : AnimatorListenerAdapter() {
+//                override fun onAnimationEnd(animation: Animator) {
+//                    blurredAnimationInProgress = false
+//                }
+//            }).start()
 
         binding.cover.animate().scaleX(1f).scaleY(1f).setDuration(180).start()
     }
